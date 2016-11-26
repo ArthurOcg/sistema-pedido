@@ -9,18 +9,26 @@ public class Pedido {
 	
 	public Pedido(){
 		
-		linhas = new ArrayList<LinhaPedido>();
-		
+		linhas = new ArrayList<LinhaPedido>();		
 	}
 	
 	
-	public boolean adionaLinha(LinhaPedido linha){
-		
-		
+	public boolean adionaLinha(LinhaPedido linha){		
 		
 		return linhas.add(linha);
 	}
 	
+	
+	public double totalFinal(){
+		
+		double  total = 0;
+		
+		for (LinhaPedido linhaPedido : linhas) {
+			total += linhaPedido.totalLinha();
+		}
+		
+		return total;
+	}
 	
 	
 }
