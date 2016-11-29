@@ -5,11 +5,28 @@ public class Produto {
 	private String nome;
 	
 	
+	public Produto(){
+		
+	}
+	
+	public Produto(String nome, double preco){
+		if(preco<0){
+			throw new IllegalArgumentException("Não é permitido preço negativo");
+		}
+		this.nome = nome;
+		this.preco = preco;
+		
+	}
+	
+	
 	public Double getPreco() {
 		return preco;
 	}
 	
 	public void setPreco(Double preco) {
+		if(preco<0){
+			throw new IllegalArgumentException("Não é permitido preço negativo");
+		}
 		this.preco = preco;
 	}
 	
