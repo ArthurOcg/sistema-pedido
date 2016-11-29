@@ -1,16 +1,28 @@
+import java.util.HashMap;
+
+import java.util.Map;
 
 public class EstoqueDAO {
 	
+	Map<Produto, Integer> estoque;
+	
+	
+	public EstoqueDAO(){
+		
+		estoque = new HashMap<>();
+		
+	}			
 	
 	
 	public void inserirProduto(Produto produto, int quantidade){
 		
-		
+		estoque.put(produto, quantidade);
 		
 	}
 	
 	
 	public boolean removerProduto(Produto produto, int quantidade){
+		
 		
 		
 		return false;
@@ -20,13 +32,13 @@ public class EstoqueDAO {
 	public int getQuantidade(Produto produto){
 		
 		
-		return 0;
+		return estoque.get(produto);
 	}
 	
-	public boolean possuiProduto(){
+	public boolean possuiProduto(Produto produto){
 		
 		
-		return false;
+		return estoque.containsKey(produto);
 	}
 	
 	 public void atualizarProduto(Produto produtoAntigo, Produto produtoNovo){
